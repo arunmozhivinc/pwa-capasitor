@@ -6,16 +6,32 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "cap:sync": "npx cap sync android",
+    "cap:open": "npx cap open android",
+    "cap:build": "npm run build && npx cap sync android",
+    "android:debug": "cd android && ./gradlew assembleDebug",
+    "android:release": "cd android && ./gradlew assembleRelease"
   },
   "dependencies": {
+    "@capacitor-community/facebook-login": "^8.0.0",
+    "@capacitor/android": "^8.1.0",
+    "@capacitor/cli": "^8.1.0",
+    "@capacitor/core": "^8.1.0",
+    "@capacitor/preferences": "^8.0.1",
+    "@codetrix-studio/capacitor-google-auth": "^3.4.0-rc.4",
     "next": "16.1.6",
+    "next-auth": "^5.0.0-beta.30",
+    "pg": "^8.18.0",
+    "pg-hstore": "^2.3.4",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "sequelize": "^6.37.7"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
+    "@types/pg": "^8.16.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",

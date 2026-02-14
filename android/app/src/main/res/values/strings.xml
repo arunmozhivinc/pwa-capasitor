@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Social Auth Demo</string>
+    <string name="title_activity_main">Social Auth Demo</string>
+    <string name="package_name">com.example.socialauth</string>
+    <string name="custom_url_scheme">com.example.socialauth</string>
+
+    <!-- Facebook Configuration -->
+    <!-- Replace YOUR_FACEBOOK_APP_ID with your actual Facebook App ID -->
+    <string name="facebook_app_id">1611343776964846</string>
+    <!-- Replace YOUR_FACEBOOK_CLIENT_TOKEN with your actual Facebook Client Token -->
+    <string name="facebook_client_token">330f158098e7b315855d15a6bfa11767</string>
+    <!-- Format: fb + app_id -->
+    <string name="fb_login_protocol_scheme">fb1611343776964846</string>
+</resources>
