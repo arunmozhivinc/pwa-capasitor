@@ -27,7 +27,6 @@ export async function signInWithGoogle(): Promise<SocialLoginResult> {
     // Initialize GoogleAuth if not already done
     if (!googleAuthInitialized) {
       await GoogleAuth.initialize({
-        clientId: "1000532101675-q428o8uq4hhdjapa8pd7pfm39vi63h69.apps.googleusercontent.com",
         scopes: ["profile", "email"],
         grantOfflineAccess: true,
       });
@@ -53,45 +52,12 @@ export async function signInWithGoogle(): Promise<SocialLoginResult> {
 }
 
 export async function signInWithFacebook(): Promise<SocialLoginResult> {
-  if (!Capacitor.isNativePlatform()) {
-    return {
-      success: false,
-      provider: "facebook",
-      token: "",
-      error: "Facebook Login is only available on native platforms",
-    };
-  }
-
-  try {
-    const { FacebookLogin } = await import("@capacitor-community/facebook-login");
-
-    const result = await FacebookLogin.login({
-      permissions: ["email", "public_profile"],
-    });
-
-    if (!result.accessToken) {
-      return {
-        success: false,
-        provider: "facebook",
-        token: "",
-        error: "Facebook login was cancelled or failed",
-      };
-    }
-
-    return {
-      success: true,
-      provider: "facebook",
-      token: result.accessToken.token,
-    };
-  } catch (error) {
-    console.error("Facebook login error:", error);
-    return {
-      success: false,
-      provider: "facebook",
-      token: "",
-      error: error instanceof Error ? error.message : "Facebook login failed",
-    };
-  }
+  return {
+    success: false,
+    provider: "facebook",
+    token: "",
+    error: "Facebook login is disabled in this build. Re-enable the plugin to use it.",
+  };
 }
 
 export async function signOutFromGoogle(): Promise<void> {
@@ -106,14 +72,8 @@ export async function signOutFromGoogle(): Promise<void> {
 }
 
 export async function signOutFromFacebook(): Promise<void> {
-  if (!Capacitor.isNativePlatform()) return;
-
-  try {
-    const { FacebookLogin } = await import("@capacitor-community/facebook-login");
-    await FacebookLogin.logout();
-  } catch (error) {
-    console.error("Facebook sign-out error:", error);
-  }
+  // Facebook logout disabled while the plugin is removed.
+  return;
 }
 
 export function isNativePlatform(): boolean {

@@ -28,7 +28,7 @@ declare module "@codetrix-studio/capacitor-google-auth" {
 
   export const GoogleAuth: GoogleAuthPlugin;
 }
-
+/* Facebook plugin types commented out while plugin is removed
 declare module "@capacitor-community/facebook-login" {
   export interface FacebookLoginPlugin {
     login(options: {
@@ -59,3 +59,4 @@ declare module "@capacitor-community/facebook-login" {
 
   export const FacebookLogin: FacebookLoginPlugin;
 }
+*/
